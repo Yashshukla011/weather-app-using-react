@@ -1,11 +1,11 @@
 import { createContext, useContext, useState } from "react";
-import { getWeatherData,getWeatherDataLocation } from "../api";
+import { getWeatherData, getWeatherDataLocation } from "../api";
 import React from "react";
 
 const WeatherContext = createContext();
 
 export const useWeather = () => {
-  return React.useContext(WeatherContext);
+  return useContext(WeatherContext);
 };
 
 export const WeatherProvider = (props) => {
@@ -14,19 +14,34 @@ export const WeatherProvider = (props) => {
 
   const fetchData = async () => {
     if (!city) return;
+    setWeather(null); // Pehle purana data clear karein (Loading dikhane ke liye)
     const response = await getWeatherData(city);
     setWeather(response);
   };
-  const fetchuserlocation=()=>{
-    navigator.geolocation.getCurrentPosition((position) => {
-     getWeatherDataLocation(position.coords.latitude, position.coords.longitude).then(response => {
-       setWeather(response);
-     });
-    });
-  }
+
+  const fetchuserlocation = () => {
+    setWeather(null); // State clear karein
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        getWeatherDataLocation(
+          position.coords.latitude,
+          position.coords.longitude
+        ).then((response) => {
+          setWeather(response);
+          setCity(""); // Refresh ke baad input box khali kar dein
+        });
+      },
+      (error) => {
+        console.error("Location Error:", error);
+        alert("Please enable location access");
+      }
+    );
+  };
 
   return (
-    <WeatherContext.Provider value={{ city, weather, fetchData, setCity, fetchuserlocation }}>
+    <WeatherContext.Provider 
+      value={{ city, weather, fetchData, setCity, fetchuserlocation }}
+    >
       {props.children}
     </WeatherContext.Provider>
   );

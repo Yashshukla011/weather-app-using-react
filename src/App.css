@@ -58,3 +58,323 @@
 margin: 10px;
 cursor: pointer;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.weather-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+/* Input Styles */
+.input-wrapper {
+  margin-bottom: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-field:focus {
+  border-color: #3b82f6;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styles */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Card Styles */
+.card {
+  margin-top: 30px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.card img {
+  width: 120px;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+.card h2 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin: 10px 0;
+  background: linear-gradient(to bottom, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card h5 {
+  color: #60a5fa;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.card p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Importing a clean modern font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-color: #0b0e14;
+  --card-bg: rgba(23, 27, 34, 0.8);
+  --accent-blue: #3b82f6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 40%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+}
+
+/* Main Container Wrapper */
+.weather-container {
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem;
+  border-radius: 32px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #fff, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Input Area */
+.input-wrapper {
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-field:focus {
+  border-color: var(--accent-blue);
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+/* Modern Button */
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.5);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.card {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  animation: slideUp 0.6s ease-out;
+  
+}
+
+.card img {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+.card h2 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.card h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 15px;
+  color: var(--text-main);
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* Loading state text */
+.loading-text {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .weather-container {
+    margin: 20px;
+    padding: 2rem 1.5rem;
+  }
+}
+.search-section {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.search-section .input-wrapper {
+  flex: 2; 
+  margin-bottom: 0;
+}
+
+.search-section .btn {
+  flex: 1; 
+}
+
+.refresh-section .btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  font-size: 0.8rem;
+}
+
+.refresh-section .btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+.weather-container {
+  
+  width: 95%;         
+  max-width: 600px;   
+  padding: 3rem;       
+}
+.search-box {
+  display: flex;
+  gap: 15px;            /* Gap thoda badha dein */
+  width: 100%;
+  align-items: center;  /* Items ko center rakhega */
+}
+
+.input-field {
+  flex: 4;              /* Input area ko zyada space dega */
+  font-size: 1.1rem;    /* Font thoda bada kar dein */
+}
+
+.search-box .btn {
+  flex: 1;              
+  white-space: nowrap;  
+}
+.card h2 {
+  font-size: 6rem;      
+  margin: 20px 0;
+}
